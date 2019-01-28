@@ -19,8 +19,7 @@ $("#add-movie").on("click", function(event){
     var newTopic = $("#movie-input").val().trim();
     topics.push(newTopic);
     renderMovies();
-    // var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-    // newTopic + "&api_key=dc6zaTOxFJmzC&limit=10";
+
     var queryURL = "https://api.giphy.com/v1/gifs/search?q= "+
     newTopic + "&api_key=TYTxoNPlHG0YG4muSpJHoaGWGTPLzvNn&limit=10";
 
@@ -29,8 +28,21 @@ $("#add-movie").on("click", function(event){
         method: "GET"
       }).then(function(response) {
         var results = response.data;
-        console.log(response);
-    })
+
+    for (var j = 0; j < results.length; j++) {
+
+        if (results[j].rating !== "r" && results[j].rating !== "pg-13") {
+          var gifDiv = $("<div>");
+          var rating = results[j].rating;
+          var p = $("<p>").text("Rating: " + rating);
+          var personImage = $("<img>");
+          personImage.attr("src", results[j].images.fixed_height.url);
+          gifDiv.append(p);
+          gifDiv.append(personImage);
+          $("#gifs-appear-here").prepend(gifDiv);
+        }
+    }
+});
 });
 
 
