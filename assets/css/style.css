@@ -1,0 +1,27 @@
+.container {
+    background-color:rgb(252, 213, 184); 
+    text-align: center;
+    color:black;
+}
+#movie-section {
+    background-color: blanchedalmond;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+}
+#gifs-appear-here {
+    background-color: blanchedalmond;
+    text-align: center;
+}
+#movie-form {
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px;
+}
+
+
+
+#add-movie {
+    background-color: rgb(245, 223, 194);
+    color: black;
+}
