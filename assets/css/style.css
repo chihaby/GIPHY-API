@@ -1,10 +1,10 @@
 .container {
-    background-color:rgb(252, 213, 184); 
+    background-color:lightblue; 
     text-align: center;
     color:black;
 }
 #movie-section {
-    background-color: rgb(214, 171, 106);
+    background-color: lightblue;
     margin: 10px;
     padding: 20px;
     text-align: center;
@@ -14,14 +14,12 @@
     text-align: center;
 }
 #movie-form {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(206, 157, 120;
     text-align: center;
     padding: 20px;
 }
 
-
-
 #add-movie {
-    background-color: rgb(245, 223, 194);
+    background-color:rgb(206, 157, 120;
     color: black;
 }
