@@ -18,8 +18,7 @@ function renderMovies(){
             url: queryURL,
             method: "GET"
             }).then(function(response) {
-            var results = response.data;
-            
+            var results = response.data;            
         for (var j = 0; j < results.length; j++) {
             if (results[j].rating !== "r" && results[j].rating !== "pg-13") {
                 var gifDiv = $("<div>");
@@ -34,6 +33,7 @@ function renderMovies(){
         }
     });
     });
+    pause();
 }
 
 $("#add-movie").on("click", function(event){
@@ -47,7 +47,7 @@ $("#add-movie").on("click", function(event){
         url: queryURL,
         method: "GET"
         }).then(function(response) {
-        var results = response.data;        
+        var results = response.data;     
     for (var j = 0; j < results.length; j++) {
         if (results[j].rating !== "r" && results[j].rating !== "pg-13") {
             var gifDiv = $("<div>");
@@ -62,20 +62,22 @@ $("#add-movie").on("click", function(event){
     }
     });
 });
-
-$("#movie-section").on("click", function() {
-    // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
-    var state = $(this).attr("data-state");
-    // If the clicked image's state is still, update its src attribute to what its data-animate value is.
-    // Then, set the image's data-state to animate
-    // Else set src to the data-still value
-    if (state === "still") {
-        $(this).attr("src", $(this).attr("data-animate"));
-        $(this).attr("data-state", "animate");
-    } else {
-        $(this).attr("src", $(this).attr("data-still"));
-        $(this).attr("data-state", "still");
-    }
-});
+function pause(){
+    $(".movie").on("click", function() {
+        // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+        var state = $(this).attr("data-name");
+        // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+        // Then, set the image's data-state to animate
+        // Else set src to the data-still value
+        if (state === "still") {
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
+        } else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+        }
+        console.log(this);
+    });
+}
 
 renderMovies();
