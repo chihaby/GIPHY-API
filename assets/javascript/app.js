@@ -39,7 +39,6 @@ function renderMovies(){
                 $("#gifs-appear-here").prepend(gifDiv);
             }
         }
-    
     });
     });
 

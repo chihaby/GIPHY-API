@@ -4,13 +4,13 @@
     color:black;
 }
 #movie-section {
-    background-color: blanchedalmond;
+    background-color: rgb(214, 171, 106);
     margin: 10px;
     padding: 20px;
     text-align: center;
 }
 #gifs-appear-here {
-    background-color: blanchedalmond;
+    background-color: rgb(231, 178, 98);
     text-align: center;
 }
 #movie-form {
