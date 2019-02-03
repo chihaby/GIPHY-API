@@ -30,7 +30,6 @@ $("#add-movie").on("click", function(event){
         var results = response.data;
         
     for (var j = 0; j < results.length; j++) {
-
         if (results[j].rating !== "r" && results[j].rating !== "pg-13") {
             var gifDiv = $("<div>");
             var rating = results[j].rating;
@@ -52,14 +51,15 @@ $("#gifs-appear-here").on("click", function() {
     // Then, set the image's data-state to animate
     // Else set src to the data-still value
     if (state === "still") {
-      $(this).attr("src", $(this).attr("data-animate"));
-      $(this).attr("data-state", "animate");
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
     } else {
-      $(this).attr("src", $(this).attr("data-still"));
-      $(this).attr("data-state", "still");
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
     }
-  });
+});
 
 
 
 renderMovies();
+console.log('test');
